@@ -1,0 +1,13 @@
+services:
+  sentiment-api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../data:/app/data
+      - ../app:/app/app
+    environment:
+      - CUDA_VISIBLE_DEVICES=""
+    restart: unless-stopped

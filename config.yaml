@@ -1,0 +1,31 @@
+data:
+  raw_path: "data/raw/SNAPFOOD.csv"
+  processed_dir: "data/processed/"
+  model_dir: "data/models/"
+  
+tokenizer:
+  cache_dir: "C:/tiktoken_cache"  # Change for your OS
+  
+model:
+  type: "lstm"  # Options: lstm, cnn, gru
+  params:
+    embed_dim: 64
+    hidden_dim: 64  # for lstm/gru
+    n_layers: 3      # for lstm/gru
+    dropout: 0.5
+    # CNN specific params (if using cnn)
+    num_filters: 100
+    filter_sizes: [3, 4, 5]
+  
+training:
+  batch_size: 64
+  max_len: 128
+  learning_rate: 0.001
+  epochs: 5
+  test_size: 0.2
+  random_state: 42
+  num_workers: 4
+  
+api:
+  host: "0.0.0.0"
+  port: 8000

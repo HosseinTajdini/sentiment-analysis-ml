@@ -1,0 +1,29 @@
+api:
+  host: 0.0.0.0
+  port: 8000
+data:
+  model_dir: data/models/
+  processed_dir: data/processed/
+  raw_path: data/raw/SNAPFOOD.csv
+model:
+  params:
+    dropout: 0.5
+    embed_dim: 64
+    filter_sizes:
+    - 3
+    - 4
+    - 5
+    hidden_dim: 64
+    n_layers: 3
+    num_filters: 100
+  type: lstm
+tokenizer:
+  cache_dir: C:/tiktoken_cache
+training:
+  batch_size: 64
+  epochs: 5
+  learning_rate: 0.001
+  max_len: 128
+  num_workers: 4
+  random_state: 42
+  test_size: 0.2
